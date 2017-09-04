@@ -17,11 +17,11 @@ http://todayapp.tv/Movie/GetMovies
 
 ### 获取影片详情
 http://todayapp.tv/Movie/GetMovieInfo
-MovieID: 5040679
+- MovieID: 5040679
 
 ### 播放影片
 http://todayapp.tv/Movie/Play
-MovieID: 5040679
+- MovieID: 5040679
 
 ### 获取影片分类
 http://todayapp.tv/Movie/GetClass
