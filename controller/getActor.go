@@ -6,10 +6,10 @@ import (
     "github.com/bitly/go-simplejson"
 )
 
-func ChannelController(c *gin.Context) {
+func ActorController(c *gin.Context) {
     result := make(chan *simplejson.Json)
 
-    go logic.GetChannel(result)
+    go logic.GetActor(result)
     // res := <- result
 
     c.JSON(200, gin.H{

@@ -20,7 +20,7 @@ http://todayapp.tv/Movie/GetMovieInfo
 - MovieID: 5040679
 
 ### 播放影片
-http://todayapp.tv/Movie/Play
+http://todayapp.tv/Movie/Play **需要登录**
 - MovieID: 5040679
 
 ### 获取影片分类

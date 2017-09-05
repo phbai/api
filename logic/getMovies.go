@@ -1,11 +1,10 @@
 package logic
 
 import (
-    "fmt"
     "github.com/bitly/go-simplejson"
 )
 
-func GetMovies() {
+func GetMovies(ch chan <- *simplejson.Json) {
     url := "Movie/GetMovies"
     data := make(map[string]string)
     data["PageIndex"] = "1"
@@ -15,6 +14,6 @@ func GetMovies() {
     data["Data"] = ""
 
     SendRequest(url, data, func(j *simplejson.Json) {
-        fmt.Println(j);
+        ch <- j
     })
 }
