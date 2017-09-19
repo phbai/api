@@ -2,6 +2,7 @@ package logic
 
 import (
     "github.com/bitly/go-simplejson"
+    "github.com/phbai/api/util"
 )
 
 func GetClass(ch chan <- *simplejson.Json) {
@@ -10,7 +11,7 @@ func GetClass(ch chan <- *simplejson.Json) {
     data["PageIndex"] = "1"
     data["PageSize"] = "50"
 
-    SendRequest(url, data, func(j *simplejson.Json) {
+    util.SendRequest(url, data, func(j *simplejson.Json) {
         ch <- j
     })
 }

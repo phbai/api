@@ -2,6 +2,7 @@ package logic
 
 import (
     "github.com/bitly/go-simplejson"
+    "github.com/phbai/api/util"
 )
 
 func GetMovies(ch chan <- *simplejson.Json) {
@@ -13,7 +14,7 @@ func GetMovies(ch chan <- *simplejson.Json) {
     data["ID"] = "-1"
     data["Data"] = ""
 
-    SendRequest(url, data, func(j *simplejson.Json) {
+    util.SendRequest(url, data, func(j *simplejson.Json) {
         ch <- j
     })
 }

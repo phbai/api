@@ -2,13 +2,14 @@ package logic
 
 import (
     "github.com/bitly/go-simplejson"
+    "github.com/phbai/api/util"
 )
 
-func GetChannel(ch chan <- *simplejson.Json) {
+func GetChannel(params util.Channel, ch chan <- *simplejson.Json) {
     url := "Movie/GetChannel"
     data := make(map[string]string)
 
-    SendRequest(url, data, func(j *simplejson.Json) {
+    util.SendRequest(url, data, func(j *simplejson.Json) {
     	// finished <- true
         ch <- j
     })
