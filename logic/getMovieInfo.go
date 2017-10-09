@@ -8,7 +8,7 @@ import (
 func GetMovieInfo(params util.MovieInfo, ch chan <- *simplejson.Json) {
     url := "Movie/GetMovieInfo"
     data := make(map[string]string)
-    data["MovieID"] = "5040679"
+    data["MovieID"] = params.MovieID
 
     util.SendRequest(url, data, func(j *simplejson.Json) {
         ch <- j

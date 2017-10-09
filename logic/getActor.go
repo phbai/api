@@ -5,11 +5,11 @@ import (
     "github.com/phbai/api/util"
 )
 
-func GetActor(ch chan <- *simplejson.Json) {
+func GetActor(params util.Actor, ch chan <- *simplejson.Json) {
     url := "Movie/GetActor"
     data := make(map[string]string)
-    data["PageIndex"] = "1"
-	data["PageSize"] = "50"
+    data["PageIndex"] = params.PageIndex
+    data["PageSize"] = params.PageSize
 
     util.SendRequest(url, data, func(j *simplejson.Json) {
         ch <- j

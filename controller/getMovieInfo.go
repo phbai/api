@@ -9,9 +9,9 @@ import (
 
 func MovieInfoController(c *gin.Context) {
     result := make(chan *simplejson.Json)
-    params := util.MovieInfo{
-        MovieID: c.Param("MovieID")
-    }
+    var params util.MovieInfo
+
+    params.MovieID = c.Query("id");
 
     go logic.GetMovieInfo(params, result)
     // res := <- result
