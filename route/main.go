@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+    gin.SetMode(gin.ReleaseMode)
     r := gin.Default()
     
     r.GET("/getChannel",    controller.ChannelController)
