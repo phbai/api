@@ -36,3 +36,11 @@ http://todayapp.tv/Movie/GetActor
 
 ### 频道分类
 http://todayapp.tv/Movie/GetChannel
+
+### 获取Token
+http://todayapi.com/vodapi.com
+- data: {"Action": "CreateToken", "Message": {"UID": "2925541B-A946-4D6A-848A-9C11F7148E71"}}
+
+### 登录用户
+http://todayapp.tv/User/Login
+- Token: A117482F65EA4240BE5C861084C682D3

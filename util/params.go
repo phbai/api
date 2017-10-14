@@ -27,3 +27,7 @@ type Movies struct {
     ID string
     Data string
 }
+
+type Login struct {
+	Token string
+}

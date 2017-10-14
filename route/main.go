@@ -14,6 +14,8 @@ func main() {
     r.GET("/getClass",      controller.ClassController)
     r.GET("/getMovieInfo",  controller.MovieInfoController)
     r.GET("/getMovies",     controller.MoviesController)
+    r.GET("/getToken",      controller.TokenController)
+    r.GET("/login",         controller.LoginController)
     r.GET("/play",          controller.PlayController)
     
     r.Run() // listen and serve on 0.0.0.0:8080
