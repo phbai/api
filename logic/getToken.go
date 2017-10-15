@@ -3,15 +3,15 @@ package logic
 import (
     "github.com/bitly/go-simplejson"
     "github.com/phbai/api/util"
+    "fmt"
 )
 
-func GetToken(params util.Actor, ch chan <- *simplejson.Json) {
-    url := "Movie/GetActor"
+func GetToken(ch chan <- *simplejson.Json) {
+    url := "http://todayapi.com/vodapi.html"
     data := make(map[string]string)
-    data["PageIndex"] = params.PageIndex
-    data["PageSize"] = params.PageSize
+    data["data"] = "{\"Action\": \"CreateToken\", \"Message\": {\"UID\": \"" + util.RandomUserId() + "\"}}"
 
-    util.SendRequest(url, data, func(j *simplejson.Json) {
+    util.SendNormalRequest(url, data, func(j *simplejson.Json) {
         ch <- j
     })
 }

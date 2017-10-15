@@ -25,3 +25,22 @@ func SendRequest(url string, data map[string]string, cb func(j *simplejson.Json)
     cb(j);
     defer resp.Body.Close()  // Don't forget close the response body
 }
+
+func SendNormalRequest(url string, data map[string]string, cb func(j *simplejson.Json)) {
+    c := new(http.Client)
+    req := request.NewRequest(c)
+    // req.Headers = map[string]string{
+    //     "Access-token": token,
+    // }
+
+    req.Data = data
+    resp, err := req.Post(url)
+    j, err := resp.Json()
+
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    cb(j);
+    defer resp.Body.Close()
+}
