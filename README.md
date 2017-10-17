@@ -1,5 +1,7 @@
 ## 接口一览
 
+-------
+## 原始接口
 ### 获取影片
 http://todayapp.tv/Movie/GetMovies
 - PageIndex: 1
@@ -20,8 +22,10 @@ http://todayapp.tv/Movie/GetMovieInfo
 - MovieID: 5040679
 
 ### 播放影片
-http://todayapp.tv/Movie/Play **需要登录**
-- MovieID: 5040679
+~~http://todayapp.tv/Movie/Play **需要登录**~~
+~~- MovieID: 5040679~~
+http://todayapi.com/vodapi.com
+- data: {"Action":"PlayFreeMovie", "Message":{"UID": "62ME6IA5-BF46-WO84-LK7Q-AG3DMHMDPUL3", "Token": "F3207E3BD9E04A6DA69D3D5934132697", "MovieID": "5041971"}}
 
 ### 获取影片分类
 http://todayapp.tv/Movie/GetClass
@@ -44,3 +48,12 @@ http://todayapi.com/vodapi.com
 ### 登录用户
 http://todayapp.tv/User/Login
 - Token: A117482F65EA4240BE5C861084C682D3
+
+------------
+- /getChannel    获取频道              不用传参数
+- /getActor      获取演员              size = 100, index = 1
+- /getClass      获取类别              size = 100, index = 1
+- /getMovieInfo  获取影片详细信息      id = 5041972
+- /getMovies     获取所有影片          type = 1, index = 1, size = 100, keyword = テスト, id = -1
+- /getToken      获取token             不用传参数(已过时 直接调/play即可)
+- /play          获取详细影片m3u8地址  id = 5041972

@@ -10,7 +10,7 @@ func GetChannel(params util.Channel, ch chan <- *simplejson.Json) {
     data := make(map[string]string)
 
     util.SendRequest(url, data, func(j *simplejson.Json) {
-    	// finished <- true
+        // finished <- true
         ch <- j
     })
 }
