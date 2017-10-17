@@ -3,7 +3,6 @@ package logic
 import (
     "github.com/bitly/go-simplejson"
     "github.com/phbai/api/util"
-    "fmt"
 )
 
 func GetToken(ch chan <- *simplejson.Json) {
